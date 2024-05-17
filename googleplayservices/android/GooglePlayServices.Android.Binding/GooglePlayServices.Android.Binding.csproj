@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>GooglePlayServices</RootNamespace>
+    <AndroidGenerateResourceDesigner>false</AndroidGenerateResourceDesigner>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AndroidLibrary Include="../native/mauigoogleplayservices/build/outputs/aar/mauigoogleplayservices-release.aar">
+      <Link>mauigoogleplayservices.aar</Link>
+      <Bind>true</Bind>
+      <Pack>true</Pack>
+      <Visible>false</Visible>
+    </AndroidLibrary>
+ 
+  </ItemGroup>
+
+  <ItemGroup>
+    <AndroidLibrary Include="../native/mauigoogleplayservices/build/outputs/deps/app-update-2.1.0.aar">
+      <Link>appupdate.aar</Link>
+      <Bind>true</Bind>
+      <Pack>true</Pack>
+      <Visible>false</Visible>
+    </AndroidLibrary>
+  </ItemGroup>
+  
+
+  <PropertyGroup>
+    <AndroidProjectDir>$(MSBuildThisFileDirectory)../native</AndroidProjectDir>
+    <AndroidProjectModule>mauigoogleplayservices</AndroidProjectModule>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\..\..\eng\Common.android.targets" />
+</Project>
